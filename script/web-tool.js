@@ -1,0 +1,101 @@
+const header = document.getElementById("header");
+const startSize = { width: 98};
+const endSize = { width: 4};
+const popup = document.getElementById("popup")
+const logo = document.getElementById("logo");
+const slideBar = document.getElementById("slidebar");
+const navigation = document.getElementById("navigation");
+const logoPosition = logo.getBoundingClientRect();
+const maxScroll = document.getElementById("hero").clientHeight;
+const aboutslide = document.getElementById("slideabout");
+const about = document.getElementById("about");
+const aboutInner = document.querySelector(".about__inner");
+const aboutInnerIdEl = document.getElementById("aboutinner");
+const textContainer = document.querySelector(".about__text-container");
+const imgAbout = document.querySelector(".about__img-container")
+
+
+
+
+
+window.addEventListener("scroll", () => {
+    const scrollPosition = Math.min(window.pageYOffset, maxScroll);
+    const progress = scrollPosition / maxScroll;
+    const currentWidth = startSize.width - (startSize.width - endSize.width) * progress;
+    header.style.width = currentWidth + '%';
+    
+    logo.style.marginLeft = 7 + "px"
+    if (currentWidth < 50) {
+        navigation.style.opacity = "0"
+        slideBar.style.opacity = "0"
+        header.style.padding = 0;
+    } else {
+        navigation.style.opacity = "1"
+        slideBar.style.opacity = "1"
+        header.style.padding = "var(--paddingforobject)";
+    }
+    // if (header.style.width === "98%") {
+    //     slideBar.style.opacity = "1"
+    //     navigation.style.opacity = "1"
+    // }
+
+    if (currentWidth === 4) {
+
+        if (window.innerWidth > 915) {
+            aboutslide.classList.add("aboutopenclass");
+        } else {
+            console.log("openforheight")
+            aboutslide.classList.remove("aboutopenclass")
+            aboutslide.style.height = "100%";
+        }
+
+        header.style.width = "40px";
+        header.addEventListener("click", (event) => {
+            event.preventDefault();
+            header.style.width = "98%";
+            header.style.transition = "width 1s";
+            slideBar.style.opacity = "1";
+            navigation.style.opacity = "1";
+            header.style.padding = "var(--paddingforobject)";
+            currentWidth = 98;
+            // popup.classList.add("active");
+            // slideBar.classList.add("rotateslidebar");
+        })
+        
+    }
+
+
+    if (currentWidth < 98) {
+        slideBar.classList.remove("rotateslidebar")
+        popup.classList.remove("active");
+    }
+
+    
+    
+    
+    
+})
+
+// slidebar
+
+
+function openPopUp() {
+    slideBar.addEventListener("click", () => {
+        slideBar.classList.toggle("rotateslidebar");
+        popup.classList.toggle("active");
+    })
+}
+
+
+
+if (window.innerWidth > 600) {
+    console.log("close")
+} else {
+    openPopUp()
+}
+
+
+if (window.innerWidth <= 500) {
+    console.log("<484")
+    aboutInnerIdEl.style.height = `${textContainer.clientHeight + imgAbout.clientHeight + 60}px`;
+}

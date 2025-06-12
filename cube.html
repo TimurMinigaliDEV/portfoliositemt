@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Плавно уменьшающийся Header</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 2000px; /* Для демонстрации прокрутки */
+        }
+        
+        .header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            height: 80px;
+            background-color: #4285f4;
+            border-radius: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.1s linear;
+            z-index: 1000;
+            overflow: hidden;
+            will-change: transform, width, height, border-radius, font-size;
+        }
+        
+        .content {
+            padding-top: 150px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header" id="header">Мой Header</div>
+    
+
+    
+    <script>
+        const header = document.getElementById('header');
+        const startSize = { width: 98, height: 80, borderRadius: 40, fontSize: 18 };
+        const endSize = { width: 6, height: 60, borderRadius: 30, fontSize: 0 };
+        const maxScroll = 300; // При такой прокрутке header достигнет минимального размера
+        
+        window.addEventListener('scroll', function() {
+            const scrollPosition = Math.min(window.pageYOffset, maxScroll);
+            const progress = scrollPosition / maxScroll;
+            
+            // Плавное изменение каждого параметра
+            const currentWidth = startSize.width - (startSize.width - endSize.width) * progress;
+            // const currentHeight = startSize.height - (startSize.height - endSize.height) * progress;
+            // const currentBorderRadius = startSize.borderRadius - (startSize.borderRadius - endSize.borderRadius) * progress;
+            // const currentFontSize = startSize.fontSize - (startSize.fontSize - endSize.fontSize) * progress;
+            
+            // Применяем вычисленные значения
+            header.style.width = currentWidth + '%';
+            header.style.height = currentHeight + 'px';
+            header.style.borderRadius = currentBorderRadius + 'px';
+            header.style.fontSize = currentFontSize + 'px';
+            
+            // Дополнительно: можно изменять прозрачность текста
+            header.style.opacity = 1;
+        });
+    </script>
+</body>
+</html>

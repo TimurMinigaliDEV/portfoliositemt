@@ -1,0 +1,7 @@
+.rotateslidebar {
+    transform: rotate(90deg);
+}
+
+.active {
+    display: block;
+}

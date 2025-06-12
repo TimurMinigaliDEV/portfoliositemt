@@ -1,0 +1,9 @@
+.stack {
+    background-color: #6b6bfd;
+    height: 100vh;
+    margin-top: 40px;
+}
+
+.stack .stack-title {
+    color: #ffffff;
+}

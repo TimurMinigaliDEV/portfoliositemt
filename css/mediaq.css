@@ -1,0 +1,133 @@
+@media (max-width:634px) {
+
+    .hero__inner .hero__inner-text__wrapper {
+        max-width: fit-content;
+    }
+
+    .hero__inner-text__wrapper .hero-title { 
+        word-wrap: break-word;
+        font-size: 4vh;
+    }
+
+    .hero__inner-text__wrapper .hero-subtitle {
+        margin-top: 20px;
+        max-width: 300px;
+        font-size: 14px;
+    }
+
+    .header__menu-wrapper .slide-bar-formedia {
+        display: flex;
+    }
+
+    .header-navigation {
+        display: none;
+    }
+
+    .popup {
+        display: none;
+    }
+
+
+}
+
+@media (max-width:375px) {
+        .backgroundlogo-img {
+        font-size: 456px;
+    }
+
+    .hero__inner-text__wrapper .hero-title { 
+        word-wrap: break-word;
+        font-size: 30px;
+        letter-spacing: -2px;
+    }
+    .hero {
+        height: fit-content;
+        padding: 111px 12px 43px 12px;
+    }
+    .backgroundlogo-img h1 {
+        line-height: 0.7;
+        letter-spacing: calc(-8.01 * 1vh);
+    }
+
+    
+}
+
+.html {
+    --padding--paddingforobject:0 12px;
+}
+
+
+@media (max-width:1045px) {
+    .about .about__text-container-title {
+        white-space: wrap;
+    }
+    .about .about__text-container-subtitle {
+        width: fit-content;
+        min-width: 300px;
+
+}
+}
+
+@media (max-width:915px) {
+    .about .about__inner {
+        justify-content: center;
+        height: 800px;
+    }
+
+    .aboutopenclassforheight {
+        height: 100%;
+    }
+
+    .about .about-slide {
+        width: 400px;
+        height: 50%;
+    }
+
+
+    .about .about__img-container {
+        height: 400px;
+        width: 100%;
+        bottom: 0;
+    }
+
+    .about .about__text-container{
+        margin:20px 20px 20px 20px;
+    }
+
+    .about .about__text-container-subtitle {
+        width: 100%;
+    }
+}
+
+@media (max-width:484px) {
+    .section-title {
+        font-size: 26px;
+    }
+
+    .about .about__inner {
+        height: 152vw;
+        
+    }
+
+    .about .about__img-container {
+        height: 78vw;
+    }
+
+    .about .about__text-container-subtitle {
+        margin-top: 10px;
+        width: fit-content;
+        font-size: 14px;
+        min-width: 100px;
+    }
+
+    .about .about__text-container-title {
+        font-size: 26px;
+    }
+
+    .about .about__text-container {
+        min-width: 200px;
+        height: fit-content;
+    }
+
+}
+
