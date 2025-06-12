@@ -23,12 +23,14 @@
     max-width: 1000px;
     width: 100%;
     position: absolute;
+    z-index: 50;
     overflow: hidden;
 }
 
 
 .about__img-container {
     position: absolute;
+    z-index: 51;
     height: 100%;
     width: 500px;
     border-radius: 20px;
