@@ -49,8 +49,6 @@ window.addEventListener("scroll", () => {
             navigation.style.opacity = "1";
             header.style.padding = "var(--paddingforobject)";
             currentWidth = 98;
-            // popup.classList.add("active");
-            // slideBar.classList.add("rotateslidebar");
         })
         
     }
@@ -62,6 +60,7 @@ window.addEventListener("scroll", () => {
             console.log("openforheight")
             aboutslide.classList.remove("aboutopenclass")
             aboutslide.style.height = "100%";
+            aboutslide.style.maxHeight = "100%";
         }
     }
 
@@ -79,7 +78,6 @@ window.addEventListener("scroll", () => {
 
 // slidebar
 
-
 function openPopUp() {
     slideBar.addEventListener("click", () => {
         slideBar.classList.toggle("rotateslidebar");
@@ -87,14 +85,11 @@ function openPopUp() {
     })
 }
 
-
-
 if (window.innerWidth > 600) {
     console.log("close")
 } else {
     openPopUp()
 }
-
 
 if (window.innerWidth <= 500) {
     console.log("<484")

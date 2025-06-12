@@ -17,7 +17,7 @@
 }
 
 .about__inner-slide-container {
-    background-color: #ecebeb;
+    background-color: var(--containercolor);
     display: flex;
     height: 100%;
     max-width: 1000px;

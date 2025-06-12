@@ -109,6 +109,10 @@
         
     }
 
+    .about .about-slide {
+        max-height: 187px;
+    }
+
     .about .about__img-container {
         height: 78vw;
     }
