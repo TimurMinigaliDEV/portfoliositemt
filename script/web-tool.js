@@ -55,7 +55,7 @@ window.addEventListener("scroll", () => {
         
     }
 
-    if (currentWidth < 20) {
+    if (currentWidth < 40) {
         if (window.innerWidth > 915) {
             aboutslide.classList.add("aboutopenclass");
         } else {
