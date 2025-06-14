@@ -1,9 +1,148 @@
+
+@keyframes stack-textdown {
+    from {
+        transform: translateY(-120%);
+    }
+}
+
+@keyframes stack-titleup {
+    from {
+        transform: translateY(120%);
+    }
+}
+
+@keyframes stack-imgdrop {
+    from {
+        transform: translateY(-120%);
+    }
+}
+
 .stack {
-    background-color: #6b6bfd;
-    height: 100vh;
-    margin-top: 40px;
+    background-color: #3838ff59;
+    margin-top: 100px;
+    padding-bottom: 40px;
 }
 
 .stack .stack-title {
     color: #ffffff;
+}
+
+.stack__inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stack__content {
+   width: fit-content;
+   height: 100%;
+   display: grid;
+   grid-template-columns: repeat(3, 250px);
+   gap: 30px;
+
+}
+
+.stack__content-box {
+    min-height: 300px;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: var(--boxshadow);
+    background-color: var(--containercolor);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+    transition: transform 0.6s;
+    padding: 20px;
+
+}
+
+.stack__content-box:hover {
+    transform: scale(1.08);
+    z-index: 40;
+}
+
+.box__text-container {
+    margin-top: 95%;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.box__text-container .box__text {
+    font-size: 14px;
+    text-align: left;
+    width: 100%;
+    transition: 2s;
+    transform: translateY(-100%);
+}
+
+
+
+.box-img h4 {
+    font-size: 30px;
+    color: #ffffff;
+    text-align: center;
+    width: 100%;
+    transition: 2s;
+    transform: translateY(100%);
+}
+
+.box-img {
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    align-items: end;
+    top: 0;
+    width: 100%;
+    height: 70%;
+    margin:auto 0;
+}
+
+.box-img--js {
+    background: rgb(253, 242, 86);
+}
+
+.box-img--git {
+    background: rgb(253, 242, 86);
+}
+
+.box-img--node {
+    background: rgb(253, 242, 86);
+}
+
+.box-img--css {
+    background: rgb(253, 242, 86);
+}
+
+.box-img--sass {
+    background: rgb(253, 242, 86);
+}
+
+.box-img--html {
+    background: rgb(253, 242, 86);
+}
+
+.box-img--react {
+    background: rgb(253, 242, 86);
+}
+
+.box-img .img {
+    position: absolute;
+    top: 2%;
+    left: 20%;
+    width: 150px;
+    height: 150px;
+    background-color: black;
+    transform: translateY(-100%);
+    transition: 2s;
+}
+
+.stack .active {
+    transform: translateY(0);
 }

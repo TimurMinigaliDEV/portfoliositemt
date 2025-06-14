@@ -12,8 +12,7 @@ const about = document.getElementById("about");
 const aboutInner = document.querySelector(".about__inner");
 const aboutInnerIdEl = document.getElementById("aboutinner");
 const textContainer = document.querySelector(".about__text-container");
-const imgAbout = document.querySelector(".about__img-container")
-
+const imgAbout = document.querySelector(".about__img-container");
 
 
 
@@ -34,10 +33,6 @@ window.addEventListener("scroll", () => {
         slideBar.style.opacity = "1"
         header.style.padding = "var(--paddingforobject)";
     }
-    // if (header.style.width === "98%") {
-    //     slideBar.style.opacity = "1"
-    //     navigation.style.opacity = "1"
-    // }
 
     if (currentWidth === 4) {
         header.style.width = "40px";
@@ -68,12 +63,7 @@ window.addEventListener("scroll", () => {
     if (currentWidth < 98) {
         slideBar.classList.remove("rotateslidebar")
         popup.classList.remove("active");
-    }
-
-    
-    
-    
-    
+    }    
 })
 
 // slidebar
@@ -95,3 +85,44 @@ if (window.innerWidth <= 500) {
     console.log("<484")
     aboutInnerIdEl.style.height = `${textContainer.clientHeight + imgAbout.clientHeight + 60}px`;
 }
+
+// stack
+
+// animation for stack-box
+
+const stackBoxText = document.querySelectorAll(".box__text");
+const stackBoximg = document.querySelectorAll(".img");
+const stackBoxTitle = document.querySelectorAll(".box__title");
+const stack = document.querySelectorAll(".stack")
+
+function stackBoxAnimation() {
+    stackBoxText.forEach((elem) => {
+        elem.classList.add("active")
+    })
+    stackBoximg.forEach((elem) => {
+        elem.classList.add("active")
+    })
+    stackBoxTitle.forEach((elem) => {
+        elem.classList.add("active")
+    })
+}
+
+const stackObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active")
+        }
+    })
+}, {threshold: 0})
+
+stackBoximg.forEach((elem)=> {
+    stackObserver.observe(elem)
+});
+
+stackBoxTitle.forEach((elem)=> {
+    stackObserver.observe(elem)
+});
+
+stackBoxText.forEach((elem)=> {
+    stackObserver.observe(elem)
+});

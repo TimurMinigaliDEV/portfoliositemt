@@ -135,3 +135,15 @@
 
 }
 
+@media (max-width:849px) {
+    .stack .stack__content {
+        grid-template-columns: repeat(2, 250px);
+    }
+}
+
+@media (max-width:565px) {
+    .stack .stack__content {
+        grid-template-columns: repeat(1, 250px);
+    }
+}
+

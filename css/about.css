@@ -64,7 +64,7 @@
 }
 
 .about__text-container-subtitle ul li{
-    list-style:decimal;
+    list-style:disc;
     margin-left: 20px;
     line-height: 1.2;
 }
