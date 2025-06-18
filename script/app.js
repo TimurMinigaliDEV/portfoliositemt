@@ -126,3 +126,11 @@ stackBoxTitle.forEach((elem)=> {
 stackBoxText.forEach((elem)=> {
     stackObserver.observe(elem)
 });
+
+// ABOUT_IMAGE SCRIPT
+
+const image = document.querySelector(".about__img-container")
+
+image.addEventListener("click", () => {
+    image.style.backgroundImage = "url(../image/imageforaboutforclick.jpg)"
+})

@@ -147,3 +147,9 @@
     }
 }
 
+@media (min-width:1275px) {
+    .stack h2 {
+        font-size: 20px;
+}
+}
+

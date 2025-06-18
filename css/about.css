@@ -1,4 +1,8 @@
 
+.about {
+    margin-top: 40px;
+}
+
 .about__inner {
     display: flex;
     justify-content: end;
@@ -9,11 +13,18 @@
 .about-slide {
     width: 50%;
     height: 100%;
-    box-shadow: var(--boxshadow);
-    border-radius: 20px;
+    box-shadow: 18px 25px 0px 0px #00000030;
+    /* border-radius: 20px; */
     overflow: hidden;
     position: relative;
     transition: 2s;
+}
+
+.about-title {
+    font-size: 15vw;
+    line-height: 0.6;
+    margin: 0;
+    opacity: 0.4;
 }
 
 .about__inner-slide-container {
@@ -33,8 +44,13 @@
     z-index: 51;
     height: 100%;
     width: 500px;
-    border-radius: 20px;
-    background-image: linear-gradient(45deg, #ffbf48, #3838ff)
+    cursor: pointer;
+    /* border-radius: 20px; */
+    /* background-image: linear-gradient(45deg, #ffbf48, #3838ff) */
+    background-image: url(../image/imageforabout.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 2s;
 }
 
 .about__text-container {
