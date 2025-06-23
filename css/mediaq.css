@@ -133,6 +133,12 @@
         height: fit-content;
     }
 
+    .stack .stack__content {
+        gap: 40px;
+
+}
+
+
 }
 
 @media (max-width:849px) {

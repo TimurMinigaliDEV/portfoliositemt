@@ -94,6 +94,7 @@ const stackBoxText = document.querySelectorAll(".box__text");
 const stackBoximg = document.querySelectorAll(".img");
 const stackBoxTitle = document.querySelectorAll(".box__title");
 const stack = document.querySelectorAll(".stack")
+const stackContainer = document.querySelectorAll(".stack__content-box")
 
 function stackBoxAnimation() {
     stackBoxText.forEach((elem) => {
@@ -115,6 +116,31 @@ const stackObserver = new IntersectionObserver((entries) => {
     })
 }, {threshold: 0})
 
+const stackContObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.intersectionRatio >= 1) {
+            entry.target.style.transform = "scale(1.1)"        
+        } else if (entry.intersectionRatio < 0.99){
+            entry.target.style.transform = "scale(1)"
+        }
+
+    })
+}, {threshold: [1, 0.99]})
+
+// const stackContDownObserver = new IntersectionObserver((entries) => {
+//     entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//             entry.target.style.transform = "scale(1)"        
+//         }
+//     })
+// }, {threshold: 0.8})
+
+if (window.innerWidth < 430) {
+    stackContainer.forEach((elem) => {
+    stackContObserver.observe(elem)
+})
+}
+
 stackBoximg.forEach((elem)=> {
     stackObserver.observe(elem)
 });
@@ -126,6 +152,8 @@ stackBoxTitle.forEach((elem)=> {
 stackBoxText.forEach((elem)=> {
     stackObserver.observe(elem)
 });
+
+
 
 // ABOUT_IMAGE SCRIPT
 
